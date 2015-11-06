@@ -35,12 +35,15 @@
       <tr>
             <td class="table_titles">ID</td>
             <td class="table_titles">Date and Time</td>
-            <td class="table_titles">Sensor Serial</td>
-            <td class="table_titles">Temperature in Celsius</td>
+            <td class="table_titles">Fahrenheit</td>
+            <td class="table_titles">Humidity</td>
+	    <td class="table_titles">Co2</td>
+	    <td class="table_titles">Light Level</td>
+	    <td class="table_titles">Temperature 2</td>
           </tr>
 <?php
     // Retrieve all records and display them
-    $result = mysql_query("SELECT * FROM temperature ORDER BY id ASC");
+    $result = mysql_query("SELECT * FROM sensors ORDER BY id ASC");
 
     // Used for row color toggle
     $oddrow = true;
@@ -62,8 +65,11 @@
         echo '<tr>';
         echo '   <td'.$css_class.'>'.$row["id"].'</td>';
         echo '   <td'.$css_class.'>'.$row["event"].'</td>';
-        echo '   <td'.$css_class.'>'.$row["sensor"].'</td>';
-        echo '   <td'.$css_class.'>'.$row["celsius"].'</td>';
+        echo '   <td'.$css_class.'>'.$row["fahrenheit"].'</td>';
+        echo '   <td'.$css_class.'>'.$row["humidity"].'</td>';
+	echo '   <td'.$css_class.'>'.$row["co2"].'</td>';
+	echo '   <td'.$css_class.'>'.$row["light"].'</td>';
+	echo '   <td'.$css_class.'>'.$row["temp2"].'</td>';
         echo '</tr>';
     }
 ?>
